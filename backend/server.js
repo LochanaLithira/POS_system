@@ -3,6 +3,7 @@ const cors = require("cors");
 const db = require("./database");
 const productRoutes = require("./routes/productRoutes");
 const salesRoutes = require("./routes/salesRoutes");
+const reportsRoutes = require("./routes/reportsRoutes");
 
 
 const app = express();
@@ -73,7 +74,7 @@ db.run(`
 
 app.use("/api/products", productRoutes); 
 app.use("/api/sales", salesRoutes);
-
+app.use("/api/reports", reportsRoutes);
 
 
 app.get("/", (req, res) => {
