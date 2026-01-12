@@ -1,8 +1,5 @@
 const db = require("../database");
-const productRoutes = require("./routes/productRoutes");
 
-const app = express();
-app.use("/api/products", productRoutes);
 
 // ADD PRODUCT
 exports.addProduct = (req, res) => {

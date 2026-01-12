@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./database");
+const productRoutes = require("./routes/productRoutes");
+
 
 const app = express();
 app.use(cors());
@@ -66,6 +68,12 @@ db.run(`
 `);
 
 // ===============================
+
+
+app.use("/api/products", productRoutes); 
+
+
+
 app.get("/", (req, res) => {
   res.send("Hardware POS Backend Running");
 });
